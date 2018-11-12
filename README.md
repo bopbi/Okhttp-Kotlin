@@ -1,8 +1,41 @@
 # Okhttp-Kotlin
 
-[![CircleCI](https://circleci.com/gh/bopbi/Okhttp-Kotlin.svg?style=svg)](https://circleci.com/gh/bopbi/Okhttp-Kotlin)
+[![CircleCI](https://circleci.com/gh/bopbi/Okhttp-Kotlin.svg?style=svg)](https://circleci.com/gh/bopbi/Okhttp-Kotlin)  [ ![Download](https://api.bintray.com/packages/bopbi/maven/okhttpkotlin/images/download.svg) ](https://bintray.com/bopbi/maven/okhttpkotlin/_latestVersion)
 
 OkHttp Kotlin Extension for Kotlin, Java, and Android
+
+the library is hosted on jcenter, to use it please add dependency
+
+    compile 'com.bobbyprabowo.okhttp-kotlin:okhttpkotlin:latest-version'
+
+# How to Use
+
+## GET Request with default OkHttpClient
+```
+val response = "https://httpbin.org/get".httpGet().execute()
+val responseBody = response.body()?.string()
+```
+## GET Request with custom OkHttpClient
+```
+val client = OkHttpClient()
+val response = "https://httpbin.org/get".httpGet(client).execute()
+val responseBody = response.body()?.string()
+```
+
+## POST Request with default OkHttpClient
+```
+val jsonBody = "{ \"foo\" : \"bar\" }"
+val ersponse = "https://httpbin.org/post".httpPost(jsonBody).execute()
+val responseBody = response.body()?.string()
+```
+
+## POST Request with custom OkHttpClient
+```
+val client = OkHttpClient()
+val jsonBody = "{ \"foo\" : \"bar\" }"
+val ersponse = "https://httpbin.org/post".httpPost(jsonBody).execute()
+val responseBody = response.body()?.string()
+```
 
 
 License
