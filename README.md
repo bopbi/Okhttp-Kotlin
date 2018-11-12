@@ -12,20 +12,23 @@ the library is hosted on jcenter, to use it please add dependency
 
 ## GET Request with default OkHttpClient
 ```
-val response = "https://httpbin.org/get".httpGet().execute()
+val call = "https://httpbin.org/get".httpGet()
+val response = call.execute()
 val responseBody = response.body()?.string()
 ```
 ## GET Request with custom OkHttpClient
 ```
 val client = OkHttpClient()
-val response = "https://httpbin.org/get".httpGet(client).execute()
+val call = "https://httpbin.org/get".httpGet(client)
+val response = call.execute()
 val responseBody = response.body()?.string()
 ```
 
 ## POST Request with default OkHttpClient
 ```
 val jsonBody = "{ \"foo\" : \"bar\" }"
-val response = "https://httpbin.org/post".httpPost(jsonBody).execute()
+val call = "https://httpbin.org/post".httpPost(jsonBody)
+val response = call.execute()
 val responseBody = response.body()?.string()
 ```
 
@@ -33,7 +36,8 @@ val responseBody = response.body()?.string()
 ```
 val client = OkHttpClient()
 val jsonBody = "{ \"foo\" : \"bar\" }"
-val response = "https://httpbin.org/post".httpPost(client, jsonBody).execute()
+val call = "https://httpbin.org/post".httpPost(client, jsonBody)
+val response = call.execute()
 val responseBody = response.body()?.string()
 ```
 
