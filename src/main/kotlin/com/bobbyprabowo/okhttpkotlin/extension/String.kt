@@ -4,6 +4,15 @@ import okhttp3.*
 
 val JSON = MediaType.parse("application/json; charset=utf-8")
 
+fun String.httpGet(): Call {
+    val request = Request.Builder()
+        .url(this)
+        .build()
+
+    val client = OkHttpClient()
+    return client.newCall(request)
+}
+
 fun String.httpGet(client: OkHttpClient): Call {
     val request = Request.Builder()
         .url(this)
