@@ -16,12 +16,44 @@ val call = "https://httpbin.org/get".httpGet()
 val response = call.execute()
 val responseBody = response.body()?.string()
 ```
+
+## Async GET Request with default OkHttpClient
+```
+val call = "https://httpbin.org/get".httpGet()
+call.enqueue(
+    object : Callback {
+        override fun onFailure(call: Call?, e: IOException?) {
+            // when failure
+        }
+
+        override fun onResponse(call: Call?, response: Response?) {
+            // when response is coming
+        }
+    })
+```
+
 ## GET Request with custom OkHttpClient
 ```
 val client = OkHttpClient()
 val call = "https://httpbin.org/get".httpGet(client)
 val response = call.execute()
 val responseBody = response.body()?.string()
+```
+
+## Async GET Request with custom OkHttpClient
+```
+val client = OkHttpClient()
+val call = "https://httpbin.org/get".httpGet(client)
+call.enqueue(
+    object : Callback {
+        override fun onFailure(call: Call?, e: IOException?) {
+            // when failure
+        }
+
+        override fun onResponse(call: Call?, response: Response?) {
+            // when response is coming
+        }
+    })
 ```
 
 ## POST Request with default OkHttpClient
@@ -32,6 +64,22 @@ val response = call.execute()
 val responseBody = response.body()?.string()
 ```
 
+## Async POST Request with default OkHttpClient
+```
+val jsonBody = "{ \"foo\" : \"bar\" }"
+val call = "https://httpbin.org/post".httpPost(jsonBody)
+call.enqueue(
+    object : Callback {
+        override fun onFailure(call: Call?, e: IOException?) {
+            // when failure
+        }
+
+        override fun onResponse(call: Call?, response: Response?) {
+            // when response is coming
+        }
+    })
+```
+
 ## POST Request with custom OkHttpClient
 ```
 val client = OkHttpClient()
@@ -39,6 +87,23 @@ val jsonBody = "{ \"foo\" : \"bar\" }"
 val call = "https://httpbin.org/post".httpPost(client, jsonBody)
 val response = call.execute()
 val responseBody = response.body()?.string()
+```
+
+## Async POST Request with custom OkHttpClient
+```
+val client = OkHttpClient()
+val jsonBody = "{ \"foo\" : \"bar\" }"
+val call = "https://httpbin.org/post".httpPost(client, jsonBody)
+call.enqueue(
+    object : Callback {
+        override fun onFailure(call: Call?, e: IOException?) {
+            // when failure
+        }
+
+        override fun onResponse(call: Call?, response: Response?) {
+            // when response is coming
+        }
+    })
 ```
 
 
