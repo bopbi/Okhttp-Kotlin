@@ -25,7 +25,7 @@ val responseBody = response.body()?.string()
 ## POST Request with default OkHttpClient
 ```
 val jsonBody = "{ \"foo\" : \"bar\" }"
-val ersponse = "https://httpbin.org/post".httpPost(jsonBody).execute()
+val response = "https://httpbin.org/post".httpPost(jsonBody).execute()
 val responseBody = response.body()?.string()
 ```
 
@@ -33,7 +33,7 @@ val responseBody = response.body()?.string()
 ```
 val client = OkHttpClient()
 val jsonBody = "{ \"foo\" : \"bar\" }"
-val ersponse = "https://httpbin.org/post".httpPost(jsonBody).execute()
+val response = "https://httpbin.org/post".httpPost(client, jsonBody).execute()
 val responseBody = response.body()?.string()
 ```
 
