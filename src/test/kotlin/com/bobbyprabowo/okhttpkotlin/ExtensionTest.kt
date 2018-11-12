@@ -79,14 +79,28 @@ class ExtensionTest {
     fun httpPost_shouldReturnCall() {
 
         val baseUrl = "http://dummy.com/dumbCall"
-        val jsonUrl = """"
+        val jsonBody = """"
+            {
+            name="hello"
+            }
+            """
+
+        val call = baseUrl.httpPost(jsonBody)
+        assertNotNull(call)
+    }
+
+    @Test
+    fun httpPostWithClient_shouldReturnCall() {
+
+        val baseUrl = "http://dummy.com/dumbCall"
+        val jsonBody = """"
             {
             name="hello"
             }
             """
 
         val client = OkHttpClient()
-        val call = baseUrl.httpPost(client, jsonUrl)
+        val call = baseUrl.httpPost(client, jsonBody)
         assertNotNull(call)
     }
 }

@@ -21,6 +21,16 @@ fun String.httpGet(client: OkHttpClient): Call {
     return client.newCall(request)
 }
 
+fun String.httpPost(jsonString: String): Call {
+    val body = RequestBody.create(JSON, jsonString)
+    val request = Request.Builder()
+        .url(this)
+        .post(body)
+        .build()
+    val client = OkHttpClient()
+    return client.newCall(request)
+}
+
 fun String.httpPost(client: OkHttpClient, jsonString: String): Call {
     val body = RequestBody.create(JSON, jsonString)
     val request = Request.Builder()
