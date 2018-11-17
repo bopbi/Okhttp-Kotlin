@@ -4,10 +4,6 @@
 
 OkHttp Kotlin Extension for Kotlin, Java, and Android
 
-the library is hosted on jcenter, to use it please add dependency
-
-    compile 'com.bobbyprabowo.okhttp-kotlin:okhttpkotlin:latest-version'
-
 # How to Use
 
 ## GET Request with default OkHttpClient
