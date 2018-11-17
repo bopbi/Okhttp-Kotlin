@@ -106,6 +106,152 @@ call.enqueue(
     })
 ```
 
+## PUT Request with default OkHttpClient
+```
+val jsonBody = "{ \"foo\" : \"bar\" }"
+val call = "https://httpbin.org/post".httpPut(jsonBody)
+val response = call.execute()
+val responseBody = response.body()?.string()
+```
+
+## Async PUT Request with default OkHttpClient
+```
+val jsonBody = "{ \"foo\" : \"bar\" }"
+val call = "https://httpbin.org/post".httpPut(jsonBody)
+call.enqueue(
+    object : Callback {
+        override fun onFailure(call: Call?, e: IOException?) {
+            // when failure
+        }
+
+        override fun onResponse(call: Call?, response: Response?) {
+            // when response is coming
+        }
+    })
+```
+
+## PUT Request with custom OkHttpClient
+```
+val client = OkHttpClient()
+val jsonBody = "{ \"foo\" : \"bar\" }"
+val call = "https://httpbin.org/post".httpPut(client, jsonBody)
+val response = call.execute()
+val responseBody = response.body()?.string()
+```
+
+## Async PUT Request with custom OkHttpClient
+```
+val client = OkHttpClient()
+val jsonBody = "{ \"foo\" : \"bar\" }"
+val call = "https://httpbin.org/post".httpPut(client, jsonBody)
+call.enqueue(
+    object : Callback {
+        override fun onFailure(call: Call?, e: IOException?) {
+            // when failure
+        }
+
+        override fun onResponse(call: Call?, response: Response?) {
+            // when response is coming
+        }
+    })
+```
+
+## DELETE Request with default OkHttpClient
+```
+val call = "https://httpbin.org/get".httpDelete()
+val response = call.execute()
+val responseBody = response.body()?.string()
+```
+
+## Async DELETE Request with default OkHttpClient
+```
+val call = "https://httpbin.org/get".httpDelete()
+call.enqueue(
+    object : Callback {
+        override fun onFailure(call: Call?, e: IOException?) {
+            // when failure
+        }
+
+        override fun onResponse(call: Call?, response: Response?) {
+            // when response is coming
+        }
+    })
+```
+
+## DELETE Request with custom OkHttpClient
+```
+val client = OkHttpClient()
+val call = "https://httpbin.org/get".httpDelete(client)
+val response = call.execute()
+val responseBody = response.body()?.string()
+```
+
+## Async DELETE Request with custom OkHttpClient
+```
+val client = OkHttpClient()
+val call = "https://httpbin.org/get".httpDelete(client)
+call.enqueue(
+    object : Callback {
+        override fun onFailure(call: Call?, e: IOException?) {
+            // when failure
+        }
+
+        override fun onResponse(call: Call?, response: Response?) {
+            // when response is coming
+        }
+    })
+```
+
+## DELETE Request with default OkHttpClient
+```
+val jsonBody = "{ \"foo\" : \"bar\" }"
+val call = "https://httpbin.org/post".httpDelete(jsonBody)
+val response = call.execute()
+val responseBody = response.body()?.string()
+```
+
+## Async DELETE Request with default OkHttpClient
+```
+val jsonBody = "{ \"foo\" : \"bar\" }"
+val call = "https://httpbin.org/post".httpDelete(jsonBody)
+call.enqueue(
+    object : Callback {
+        override fun onFailure(call: Call?, e: IOException?) {
+            // when failure
+        }
+
+        override fun onResponse(call: Call?, response: Response?) {
+            // when response is coming
+        }
+    })
+```
+
+## DELETE Request with custom OkHttpClient
+```
+val client = OkHttpClient()
+val jsonBody = "{ \"foo\" : \"bar\" }"
+val call = "https://httpbin.org/post".httpDelete(client, jsonBody)
+val response = call.execute()
+val responseBody = response.body()?.string()
+```
+
+## Async DELETE Request with custom OkHttpClient
+```
+val client = OkHttpClient()
+val jsonBody = "{ \"foo\" : \"bar\" }"
+val call = "https://httpbin.org/post".httpDelete(client, jsonBody)
+call.enqueue(
+    object : Callback {
+        override fun onFailure(call: Call?, e: IOException?) {
+            // when failure
+        }
+
+        override fun onResponse(call: Call?, response: Response?) {
+            // when response is coming
+        }
+    })
+```
+
 
 License
 --------
