@@ -17,7 +17,7 @@ version '1.0.1'
 
 apply plugin: 'com.novoda.bintray-release' // must be applied after your artifact generating plugin (eg. java / com.android.library)
 
-sourceCompatibility = 1.8
+sourceCompatibility = 1.6
 
 repositories {
     mavenCentral()
@@ -41,8 +41,8 @@ compileTestKotlin {
 
 publish {
     userOrg = 'bopbi'
-    groupId = 'com.bobbyprabowo.okhttp-kotlin'
-    artifactId = 'okhttpkotlin'
+    groupId = 'com.bobbyprabowo.okhttpkotlin'
+    artifactId = 'okhttp-kotlin'
     publishVersion = version
     desc = 'OkHttp Kotlin Wrapper for Kotlin, Java, and Android'
     website = 'https://github.com/bopbi/Okhttp-Kotlin'
