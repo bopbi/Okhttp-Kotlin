@@ -1,6 +1,6 @@
 # Okhttp-Kotlin
 
-[![CircleCI](https://circleci.com/gh/bopbi/Okhttp-Kotlin.svg?style=svg)](https://circleci.com/gh/bopbi/Okhttp-Kotlin)  [ ![Download](https://api.bintray.com/packages/bopbi/maven/okhttpkotlin/images/download.svg) ](https://bintray.com/bopbi/maven/okhttpkotlin/_latestVersion)
+[![CircleCI](https://circleci.com/gh/bopbi/Okhttp-Kotlin.svg?style=svg)](https://circleci.com/gh/bopbi/Okhttp-Kotlin)
 
 OkHttp Kotlin Extension for Kotlin, Java, and Android
 
