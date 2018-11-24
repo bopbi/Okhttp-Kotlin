@@ -42,7 +42,7 @@ compileTestKotlin {
 publish {
     userOrg = 'bopbi'
     groupId = 'com.bobbyprabowo.okhttpkotlin'
-    artifactId = 'okhttp-kotlin'
+    artifactId = 'okhttpkotlin'
     publishVersion = version
     desc = 'OkHttp Kotlin Wrapper for Kotlin, Java, and Android'
     website = 'https://github.com/bopbi/Okhttp-Kotlin'
