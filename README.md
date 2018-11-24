@@ -1,12 +1,19 @@
 # Okhttp-Kotlin
 
-[![CircleCI](https://circleci.com/gh/bopbi/Okhttp-Kotlin.svg?style=svg)](https://circleci.com/gh/bopbi/Okhttp-Kotlin)
+[![CircleCI](https://circleci.com/gh/bopbi/Okhttp-Kotlin.svg?style=svg)](https://circleci.com/gh/bopbi/Okhttp-Kotlin) [ ![Download](https://api.bintray.com/packages/bopbi/maven/okhttpkotlin/images/download.svg) ](https://bintray.com/bopbi/maven/okhttpkotlin/_latestVersion)
 
 OkHttp Kotlin Extension for Kotlin, Java, and Android
 
-# How to Use
+## How to get
 
-## GET Request with default OkHttpClient
+the library is hosted on jcenter, to use it please add dependency
+
+    compile 'com.bobbyprabowo.okhttp-kotlin:okhttpkotlin:latest-version'
+
+
+## How to Use
+
+### GET Request with default OkHttpClient
 ```
 val call = "https://httpbin.org/get".httpGet()
 val response = call.execute()
@@ -28,7 +35,7 @@ call.enqueue(
     })
 ```
 
-## GET Request with custom OkHttpClient
+### GET Request with custom OkHttpClient
 ```
 val client = OkHttpClient()
 val call = "https://httpbin.org/get".httpGet(client)
@@ -36,7 +43,7 @@ val response = call.execute()
 val responseBody = response.body()?.string()
 ```
 
-## Async GET Request with custom OkHttpClient
+### Async GET Request with custom OkHttpClient
 ```
 val client = OkHttpClient()
 val call = "https://httpbin.org/get".httpGet(client)
@@ -52,7 +59,7 @@ call.enqueue(
     })
 ```
 
-## POST Request with default OkHttpClient
+### POST Request with default OkHttpClient
 ```
 val jsonBody = "{ \"foo\" : \"bar\" }"
 val call = "https://httpbin.org/post".httpPost(jsonBody)
@@ -60,7 +67,7 @@ val response = call.execute()
 val responseBody = response.body()?.string()
 ```
 
-## Async POST Request with default OkHttpClient
+### Async POST Request with default OkHttpClient
 ```
 val jsonBody = "{ \"foo\" : \"bar\" }"
 val call = "https://httpbin.org/post".httpPost(jsonBody)
@@ -76,7 +83,7 @@ call.enqueue(
     })
 ```
 
-## POST Request with custom OkHttpClient
+### POST Request with custom OkHttpClient
 ```
 val client = OkHttpClient()
 val jsonBody = "{ \"foo\" : \"bar\" }"
@@ -85,7 +92,7 @@ val response = call.execute()
 val responseBody = response.body()?.string()
 ```
 
-## Async POST Request with custom OkHttpClient
+### Async POST Request with custom OkHttpClient
 ```
 val client = OkHttpClient()
 val jsonBody = "{ \"foo\" : \"bar\" }"
@@ -102,7 +109,7 @@ call.enqueue(
     })
 ```
 
-## PUT Request with default OkHttpClient
+### PUT Request with default OkHttpClient
 ```
 val jsonBody = "{ \"foo\" : \"bar\" }"
 val call = "https://httpbin.org/put".httpPut(jsonBody)
@@ -126,7 +133,7 @@ call.enqueue(
     })
 ```
 
-## PUT Request with custom OkHttpClient
+### PUT Request with custom OkHttpClient
 ```
 val client = OkHttpClient()
 val jsonBody = "{ \"foo\" : \"bar\" }"
@@ -152,14 +159,14 @@ call.enqueue(
     })
 ```
 
-## DELETE Request with default OkHttpClient
+### DELETE Request with default OkHttpClient
 ```
 val call = "https://httpbin.org/delete".httpDelete()
 val response = call.execute()
 val responseBody = response.body()?.string()
 ```
 
-## Async DELETE Request with default OkHttpClient
+### Async DELETE Request with default OkHttpClient
 ```
 val call = "https://httpbin.org/delete".httpDelete()
 call.enqueue(
@@ -174,7 +181,7 @@ call.enqueue(
     })
 ```
 
-## DELETE Request with custom OkHttpClient
+### DELETE Request with custom OkHttpClient
 ```
 val client = OkHttpClient()
 val call = "https://httpbin.org/delete".httpDelete(client)
@@ -182,7 +189,7 @@ val response = call.execute()
 val responseBody = response.body()?.string()
 ```
 
-## Async DELETE Request with custom OkHttpClient
+### Async DELETE Request with custom OkHttpClient
 ```
 val client = OkHttpClient()
 val call = "https://httpbin.org/delete".httpDelete(client)
@@ -198,7 +205,7 @@ call.enqueue(
     })
 ```
 
-## DELETE Request with default OkHttpClient
+### DELETE Request with default OkHttpClient
 ```
 val jsonBody = "{ \"foo\" : \"bar\" }"
 val call = "https://httpbin.org/delete".httpDelete(jsonBody)
@@ -206,7 +213,7 @@ val response = call.execute()
 val responseBody = response.body()?.string()
 ```
 
-## Async DELETE Request with default OkHttpClient
+### Async DELETE Request with default OkHttpClient
 ```
 val jsonBody = "{ \"foo\" : \"bar\" }"
 val call = "https://httpbin.org/delete".httpDelete(jsonBody)
@@ -222,7 +229,7 @@ call.enqueue(
     })
 ```
 
-## DELETE Request with custom OkHttpClient
+### DELETE Request with custom OkHttpClient
 ```
 val client = OkHttpClient()
 val jsonBody = "{ \"foo\" : \"bar\" }"
@@ -231,7 +238,7 @@ val response = call.execute()
 val responseBody = response.body()?.string()
 ```
 
-## Async DELETE Request with custom OkHttpClient
+### Async DELETE Request with custom OkHttpClient
 ```
 val client = OkHttpClient()
 val jsonBody = "{ \"foo\" : \"bar\" }"
